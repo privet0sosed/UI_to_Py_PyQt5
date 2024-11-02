@@ -4,5 +4,6 @@ if not exist "%1" (
  timeout /t 3 /nobreak > nul
  exit /b
 )
-py -m PyQt5.uic.pyuic -x "%1" -o "%~dp1%~n1.py"
+cd %~dp1
+python -m PyQt5.uic.pyuic -x "%1" -o "%~n1.py"
 pause
